@@ -1,13 +1,17 @@
-int potPin = 34; // ADC pin
-int value = 0;
+int ledPin = 2; // Digital output pin for LED
 
 void setup() {
+  pinMode(ledPin, OUTPUT); 
   Serial.begin(115200);
 }
 
 void loop() {
-  value = analogRead(potPin);
-  Serial.println(value);
-  Serial.print("ADC Value: ");
+  Serial.print("0");
+  digitalWrite(ledPin, HIGH); 
+  delay(500);
+
+  Serial.println(" Kill!");
+  digitalWrite(ledPin, LOW); 
   delay(500);
 }
+
